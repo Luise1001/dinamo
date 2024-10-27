@@ -8,7 +8,7 @@
     @include('app.layouts.menu.components.back-button')
 @endsection
 @section('navbar-title')
-    EDITAR ROLE
+    EDITAR ROL
 @endsection
 
 <div class="p-3 m-2 card">

@@ -5,9 +5,15 @@ use App\Http\Controllers\Web\App\SettingController;
 use App\Http\Controllers\Web\App\PermissionController;
 use App\Http\Controllers\Web\App\RoleController;
 use App\Http\Controllers\Web\App\ProfileController;
+use App\Http\Controllers\Web\App\CurrencyController;
 
 
 Route::get('/', function () {
+
+    if(auth()->check()){
+        return redirect()->route('dashboard');
+    }
+
     return view('index');
 });
 
@@ -52,7 +58,15 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         Route::get('/perfil/sesiones', [ProfileController::class, 'sessions'])->name('profile.sessions');
         Route::get('/perfil/eliminar-cuenta', [ProfileController::class, 'deleteAccount'])->name('profile.deleteAccount');
         
-
+        
+        /**
+         * Currencies
+         */
+        Route::get('/monedas', [CurrencyController::class, 'index'])->name('currencies');
+        Route::post('/monedas', [CurrencyController::class, 'store'])->name('currencies.store');
+        Route::put('/monedas', [CurrencyController::class, 'update'])->name('currencies.update');
+        Route::get('/monedas/crear', [CurrencyController::class, 'create'])->name('currencies.create');
+        Route::get('/monedas/editar={id}', [CurrencyController::class, 'edit'])->name('currencies.edit');
 
         /**
          * Dashboard

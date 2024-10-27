@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('display_name')->unique();
             $table->string('description')->nullable();
             $table->boolean('active')->default(true);
+            $table->boolean('hidden')->default(false);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

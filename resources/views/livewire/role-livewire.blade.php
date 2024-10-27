@@ -1,5 +1,5 @@
 <div>
-    @if (isset($roles) && $roles->count() > 1)
+    @if (isset($roles) && $roles->count() > 0)
         @foreach ($roles as $role)
             <a class="p-2 nav-link d-flex justify-content-between" href="{{ route('roles.edit', ['id' => $role->id]) }}">
                 {{ $role->display_name }}

@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('display_name')->unique();
-            $table->string('description')->nullable();
-            $table->string('route')->nullable();
+            $table->string('code', 5)->unique();
+            $table->decimal('rate', 17, 2);
             $table->boolean('active')->default(true);
-            $table->boolean('hidden')->default(false);
+            $table->decimal('limit_user', 17, 2);
+            $table->decimal('limit_driver', 17, 2);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('currencies');
     }
 };

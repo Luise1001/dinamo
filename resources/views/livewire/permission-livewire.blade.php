@@ -1,5 +1,5 @@
 <div>
-    @if (isset($permissions) && $permissions->count() > 1)
+    @if (isset($permissions) && $permissions->count() > 0)
     @foreach ($permissions as $permission)
         <a class="p-2 nav-link d-flex justify-content-between" href="{{ route('permissions.edit', ['id' => $permission->id]) }}">
             {{ $permission->display_name }}

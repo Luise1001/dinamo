@@ -17,6 +17,7 @@
 
 <body>
     <?php echo $__env->make('app.layouts.menu.navbar.navbar-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
     <?php if(session('success')): ?>
         <div class="text-center text-light-green">
             <?php echo e(session('success')); ?>

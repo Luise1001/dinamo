@@ -16,6 +16,7 @@
 
 <body>
     @include('app.layouts.menu.navbar.navbar-menu')
+    
     @if (session('success'))
         <div class="text-center text-light-green">
             {{ session('success') }}

@@ -41,7 +41,7 @@
                 </a>
             </div>
 
-            <div class="footer">
+            <div class="footer d-none">
                 <div class="text-center">
                     <a class="nav-link" href="{{ route('password.request') }}">
                         ¿Olvidaste tu contraseña?

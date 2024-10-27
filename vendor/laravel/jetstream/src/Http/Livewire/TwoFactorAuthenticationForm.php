@@ -65,7 +65,8 @@ class TwoFactorAuthenticationForm extends Component
     public function enableTwoFactorAuthentication(EnableTwoFactorAuthentication $enable)
     {
         // if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
-        //     $this->ensurePasswordIsConfirmed();
+        //     $this->confirmingAction = 'enableTwoFactor';
+        //     $this->confirmingUserDeletion = true;
         // }
 
         $enable(Auth::user());
@@ -87,9 +88,9 @@ class TwoFactorAuthenticationForm extends Component
      */
     public function confirmTwoFactorAuthentication(ConfirmTwoFactorAuthentication $confirm)
     {
-        if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
-            $this->ensurePasswordIsConfirmed();
-        }
+        // if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
+        //     $this->ensurePasswordIsConfirmed();
+        // }
 
         $confirm(Auth::user(), $this->code);
 
@@ -105,9 +106,9 @@ class TwoFactorAuthenticationForm extends Component
      */
     public function showRecoveryCodes()
     {
-        if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
-            $this->ensurePasswordIsConfirmed();
-        }
+        // if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
+        //     $this->ensurePasswordIsConfirmed();
+        // }
 
         $this->showingRecoveryCodes = true;
     }
@@ -120,9 +121,9 @@ class TwoFactorAuthenticationForm extends Component
      */
     public function regenerateRecoveryCodes(GenerateNewRecoveryCodes $generate)
     {
-        if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
-            $this->ensurePasswordIsConfirmed();
-        }
+        // if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
+        //     $this->ensurePasswordIsConfirmed();
+        // }
 
         $generate(Auth::user());
 

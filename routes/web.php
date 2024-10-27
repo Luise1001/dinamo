@@ -4,6 +4,7 @@ use App\Http\Controllers\Web\App\AuthController;
 use App\Http\Controllers\Web\App\SettingController;
 use App\Http\Controllers\Web\App\PermissionController;
 use App\Http\Controllers\Web\App\RoleController;
+use App\Http\Controllers\Web\App\ProfileController;
 
 
 Route::get('/', function () {
@@ -40,6 +41,18 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         Route::put('/roles', [RoleController::class, 'update'])->name('roles.update');
         Route::get('/roles/crear', [RoleController::class, 'create'])->name('roles.create');
         Route::get('/roles/editar/rol={id}', [RoleController::class, 'edit'])->name('roles.edit');
+
+        /**
+         * Profile
+         */
+        Route::get('/perfil', [ProfileController::class, 'index'])->name('profile');
+        Route::get('/perfil/informacion', [ProfileController::class, 'info'])->name('profile.info');
+        Route::get('/perfil/cambio-clave', [ProfileController::class, 'password'])->name('profile.password');
+        Route::get('/perfil/seguridad', [ProfileController::class, 'security'])->name('profile.security');
+        Route::get('/perfil/sesiones', [ProfileController::class, 'sessions'])->name('profile.sessions');
+        Route::get('/perfil/eliminar-cuenta', [ProfileController::class, 'deleteAccount'])->name('profile.deleteAccount');
+        
+
 
         /**
          * Dashboard

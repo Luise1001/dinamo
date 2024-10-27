@@ -74,7 +74,7 @@ trait ConfirmsPasswords
     {
         if (! app(ConfirmPassword::class)(app(StatefulGuard::class), Auth::user(), $this->confirmablePassword)) {
             throw ValidationException::withMessages([
-                'confirmable_password' => [__('This password does not match our records.')],
+                'confirmable_password' => [__('La contraseña proporcionada es incorrecta.')],
             ]);
         }
 

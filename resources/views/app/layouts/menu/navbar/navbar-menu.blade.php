@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark-green">
+<nav class="fixed-top navbar navbar-expand-lg bg-dark-green">
     <div class="justify-content-between d-flex">
         <div class="p-2">
           @yield('left-button')

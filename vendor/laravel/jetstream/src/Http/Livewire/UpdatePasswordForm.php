@@ -63,6 +63,6 @@ class UpdatePasswordForm extends Component
      */
     public function render()
     {
-        return view('profile.update-password-form');
+        return view('app.profile.components.update-password-form');
     }
 }

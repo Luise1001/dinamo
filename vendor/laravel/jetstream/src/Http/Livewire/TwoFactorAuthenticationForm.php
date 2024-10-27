@@ -64,9 +64,9 @@ class TwoFactorAuthenticationForm extends Component
      */
     public function enableTwoFactorAuthentication(EnableTwoFactorAuthentication $enable)
     {
-        if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
-            $this->ensurePasswordIsConfirmed();
-        }
+        // if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
+        //     $this->ensurePasswordIsConfirmed();
+        // }
 
         $enable(Auth::user());
 
@@ -137,9 +137,10 @@ class TwoFactorAuthenticationForm extends Component
      */
     public function disableTwoFactorAuthentication(DisableTwoFactorAuthentication $disable)
     {
-        if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
-            $this->ensurePasswordIsConfirmed();
-        }
+        
+        // if (Features::optionEnabled(Features::twoFactorAuthentication(), 'confirmPassword')) {
+        //     $this->ensurePasswordIsConfirmed();
+        // }
 
         $disable(Auth::user());
 
@@ -175,6 +176,6 @@ class TwoFactorAuthenticationForm extends Component
      */
     public function render()
     {
-        return view('profile.two-factor-authentication-form');
+        return view('app.profile.components.two-factor-authentication-form');
     }
 }

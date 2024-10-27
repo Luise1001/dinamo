@@ -64,7 +64,7 @@ class UpdateProfileInformationForm extends Component
         );
 
         if (isset($this->photo)) {
-            return redirect()->route('profile.show');
+            return redirect()->route('profile.info');
         }
 
         $this->dispatch('saved');
@@ -113,6 +113,6 @@ class UpdateProfileInformationForm extends Component
      */
     public function render()
     {
-        return view('profile.update-profile-information-form');
+        return view('app.profile.components.update-profile-information-form');
     }
 }

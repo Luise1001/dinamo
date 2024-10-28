@@ -18,7 +18,7 @@
 <body>
 
     <?php if(session('success')): ?>
-        <div class="text-center text-light-green">
+        <div class="text-center text-primary-light">
             <?php echo e(session('success')); ?>
 
         </div>

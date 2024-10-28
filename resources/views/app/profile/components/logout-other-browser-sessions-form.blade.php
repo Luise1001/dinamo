@@ -1,6 +1,6 @@
 <div class="p-2 m-2 card">
     <div class="mb-2">
-        <p class="text-dark-green">
+        <p class="text-primary-color">
             Controla y cierra las sesiones de tu cuenta en otros dispositivos y navegadores.
         </p>
     </div>
@@ -48,7 +48,7 @@
     @endif
 
     <div class="mt-5 text-center">
-        <button class="shadow-sm btn btn-sm fw-semibold text-dark-green bg-light-blue" wire:click="confirmLogout" wire:loading.attr="disabled">
+        <button class="shadow-sm btn btn-sm fw-semibold text-primary-color bg-secondary-light" wire:click="confirmLogout" wire:loading.attr="disabled">
             Cerrar sesión
         </button>
     </div>
@@ -62,17 +62,17 @@
                 </p>
 
                 <div class="mt-4">
-                    <label for="password" class="fw-semibold text-dark-green required">Contraseña</label>
+                    <label for="password" class="fw-semibold text-primary-color required">Contraseña</label>
                     <input type="password" class="form-control" autocomplete="current-password" placeholder="Contraseña"
                         wire:model="password" wire:keydown.enter="logoutOtherBrowserSessions">
                     @error('password') <span class="mt-2 text-sm text-red-500">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="mt-4 text-center">
-                    <button class="shadow-sm btn btn-md fw-semibold text-dark-green bg-light-gray" wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
+                    <button class="shadow-sm btn btn-md fw-semibold text-primary-color bg-neutral-medium" wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
                         Cancelar
                     </button>
-                    <button class="shadow-sm btn btn-md fw-semibold text-dark-green bg-light-blue" wire:click="logoutOtherBrowserSessions" wire:loading.attr="disabled">
+                    <button class="shadow-sm btn btn-md fw-semibold text-primary-color bg-secondary-light" wire:click="logoutOtherBrowserSessions" wire:loading.attr="disabled">
                        Confirmar
                     </button>
                 </div>

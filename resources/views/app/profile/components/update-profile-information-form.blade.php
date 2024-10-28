@@ -26,7 +26,7 @@
                 </div>
 
                 @if ($this->user->profile_photo_path)
-                    <a type="button" wire:click="deleteProfilePhoto" class="mt-3 nav-link text-dark-green">
+                    <a type="button" wire:click="deleteProfilePhoto" class="mt-3 nav-link text-primary-color">
                         Remover foto
                     </a>
                 @endif
@@ -39,7 +39,7 @@
 
 
         <div>
-            <label for="name" class="text-dark-green fw-semibold required">Nombre </label>
+            <label for="name" class="text-primary-color fw-semibold required">Nombre </label>
             <input class="form-control " id="name" type="text" wire:model="state.name" required placeholder="Nombre">
             @error('name')
                 <span class="mt-2 text-sm text-red-500">{{ $message }}</span>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="mt-1">
-            <label for="email" class="fw-semibold text-dark-green required">Correo electrónico</label>
+            <label for="email" class="fw-semibold text-primary-color required">Correo electrónico</label>
             <input class="form-control" id="email" type="email" wire:model="state.email" required placeholder="Correo electrónico">
             @error('email')
                 <span class="mt-2 text-sm text-red-500">{{ $message }}</span>
@@ -74,7 +74,7 @@
 
         <div class="mt-3 text-center">
 
-            <button class="shadow-sm btn btn-md bg-light-blue text-dark-green fw-semibold" type="submit" wire:loading.attr="disabled" wire:target="photo">
+            <button class="shadow-sm btn btn-md bg-secondary-light text-primary-color fw-semibold" type="submit" wire:loading.attr="disabled" wire:target="photo">
                 Guardar
             </button>
         </div>

@@ -1,10 +1,10 @@
-<nav class="fixed-top navbar navbar-expand-lg bg-dark-green">
+<nav class="fixed-top navbar navbar-expand-lg bg-primary-color">
     <div class="justify-content-between d-flex">
         <div class="p-2">
           @yield('left-button')
         </div>
 
-        <div class="p-2 text-light-gray fw-bold">
+        <div class="p-2 text-neutral-light fw-bold">
             @yield('navbar-title')
         </div>
 

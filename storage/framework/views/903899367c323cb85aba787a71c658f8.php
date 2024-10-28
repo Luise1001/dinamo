@@ -1,5 +1,5 @@
 <div>
-    <!--[if BLOCK]><![endif]--><?php if(isset($permissions) && $permissions->count() > 1): ?>
+    <!--[if BLOCK]><![endif]--><?php if(isset($permissions) && $permissions->count() > 0): ?>
     <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $permissions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $permission): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <a class="p-2 nav-link d-flex justify-content-between" href="<?php echo e(route('permissions.edit', ['id' => $permission->id])); ?>">
             <?php echo e($permission->display_name); ?>

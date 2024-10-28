@@ -1,14 +1,14 @@
 <div class="p-2 m-2 card">
     <div class="mb-4">
-        <h2 class="text-dark-green">
+        <h2 class="text-primary-color">
             Autenticación en dos pasos
         </h2>
-        <p class="text-dark-green">
+        <p class="text-primary-color">
             Agrega una capa adicional de seguridad a tu cuenta usando la autenticación en dos pasos.
         </p>
     </div>
 
-    <h3 class="text-dark-green">
+    <h3 class="text-primary-color">
         @if ($this->enabled)
             @if ($showingConfirmation)
                 Habilitando la autenticación en dos pasos
@@ -47,14 +47,14 @@
             </div>
 
             <div class="max-w-xl mt-4 text-sm text-gray-600">
-                <p class="text-dark-green">
+                <p class="text-primary-color">
                     Clave: {{ decrypt($this->user->two_factor_secret) }}
                 </p>
             </div>
 
             @if ($showingConfirmation)
                 <div class="mt-4">
-                    <label for="code" class="fw-semibold text-dark-green required">
+                    <label for="code" class="fw-semibold text-primary-color required">
                         Código
                     </label>
                     <input class="form-control" id="code" type="text" name="code" inputmode="numeric"
@@ -85,35 +85,35 @@
 
     <div class="mt-3 text-center">
         @if (!$this->enabled)
-            <button class="shadow-sm btn btn-md fw-semibold text-dark-green bg-light-blue" type="button"
+            <button class="shadow-sm btn btn-md fw-semibold text-primary-color bg-secondary-light" type="button"
                 wire:click="enableTwoFactorAuthentication" wire:loading.attr="disabled">
                 Habilitar
             </button>
         @else
             @if ($showingConfirmation)
-                <button class="btn btn-md text-dark-green bg-light-gray fw-semibold" type="button"
+                <button class="btn btn-md text-primary-color bg-neutral-medium fw-semibold" type="button"
                     wire:click="disableTwoFactorAuthentication" wire:loading.attr="disabled">
                     Cancelar
                 </button>
             @else
-                <button class="shadow-sm btn btn-md text-dark-green bg-light-blue fw-semibold" type="button"
+                <button class="shadow-sm btn btn-md text-primary-color bg-secondary-light fw-semibold" type="button"
                     wire:click="disableTwoFactorAuthentication" wire:loading.attr="disabled">
                     Deshabilitar
                 </button>
             @endif
 
             @if ($showingRecoveryCodes)
-                <button class="shadow-sm btn btn-md text-dark-green bg-light-blue fw-semibold" type="button"
+                <button class="shadow-sm btn btn-md text-primary-color bg-secondary-light fw-semibold" type="button"
                     wire:click="regenerateRecoveryCodes" wire:loading.attr="disabled">
                     Generar códigos de recuperación
                 </button>
             @elseif ($showingConfirmation)
-                <button class="shadow-sm btn btn-md text-dark-green bg-light-blue fw-semibold" type="button"
+                <button class="shadow-sm btn btn-md text-primary-color bg-secondary-light fw-semibold" type="button"
                     wire:click="confirmTwoFactorAuthentication" wire:loading.attr="disabled">
                     Confirmar
                 </button>
             @else
-                <button class="shadow-sm btn btn-md text-dark-green bg-light-blue fw-semibold" type="button"
+                <button class="shadow-sm btn btn-md text-primary-color bg-secondary-light fw-semibold" type="button"
                     wire:click="showRecoveryCodes" wire:loading.attr="disabled">
                     Mostrar códigos de recuperación
                 </button>

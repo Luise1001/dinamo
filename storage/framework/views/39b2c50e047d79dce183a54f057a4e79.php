@@ -1,5 +1,5 @@
 <div>
-    <!--[if BLOCK]><![endif]--><?php if(isset($roles) && $roles->count() > 1): ?>
+    <!--[if BLOCK]><![endif]--><?php if(isset($roles) && $roles->count() > 0): ?>
         <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <a class="p-2 nav-link d-flex justify-content-between" href="<?php echo e(route('roles.edit', ['id' => $role->id])); ?>">
                 <?php echo e($role->display_name); ?>

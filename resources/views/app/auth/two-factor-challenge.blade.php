@@ -20,19 +20,19 @@
                     @csrf
 
                     <div class="mt-4" x-show="! recovery">
-                        <label for="code" class="fw-semibold required text-dark-green">Código</label>
+                        <label for="code" class="fw-semibold required text-primary-color">Código</label>
                         <input id="code" class="form-control" type="text" inputmode="numeric" name="code"
                             autofocus x-ref="code" placeholder="Código">
                     </div>
 
                     <div class="mt-4" x-cloak x-show="recovery">
-                        <label for="recovery_code" class="fw-semibold required text-dark-green">Código de recuperación</label>
+                        <label for="recovery_code" class="fw-semibold required text-primary-color">Código de recuperación</label>
                         <input id="recovery_code" class="form-control" type="text" name="recovery_code"
                             x-ref="recovery_code" placeholder="Código de recuperación">
                     </div>
 
                     <div class="pb-3 mt-3 text-center d-flex">
-                        <button type="button" class="shadow-sm btn btn-md bg-light-gray text-dark-green me-2 fw-semibold" x-show="! recovery"
+                        <button type="button" class="shadow-sm btn btn-md bg-neutral-medium text-primary-color me-2 fw-semibold" x-show="! recovery"
                             x-on:click="
                                 recovery = true;
                                 $nextTick(() => { $refs.recovery_code.focus() })
@@ -40,7 +40,7 @@
                             Código de recuperación
                         </button>
 
-                        <button type="button" class="shadow-sm btn btn-md bg-light-gray text-dark-green me-2 fw-semibold" x-cloak x-show="recovery"
+                        <button type="button" class="shadow-sm btn btn-md bg-neutral-medium text-primary-color me-2 fw-semibold" x-cloak x-show="recovery"
                             x-on:click="
                                 recovery = false;
                                 $nextTick(() => { $refs.code.focus() })
@@ -48,7 +48,7 @@
                             Código de autenticación
                         </button>
 
-                        <button type="submit" class="shadow-sm btn btn-md bg-light-blue text-dark-green fw-semibold">
+                        <button type="submit" class="shadow-sm btn btn-md bg-secondary-light text-primary-color fw-semibold">
                             Iniciar Sesión
                         </button>
                     </div>

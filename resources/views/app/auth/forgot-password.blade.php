@@ -14,13 +14,13 @@
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
                 <div class="block">
-                    <label for="email" class="fw-semibold required text-dark-green">Correo Electrónico</label>
+                    <label for="email" class="fw-semibold required text-primary-color">Correo Electrónico</label>
                     <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}"
                         required autofocus placeholder="Correo electrónico">
                 </div>
 
                 <div class="mt-4 text-center">
-                    <button type="submit" class="btn btn-md text-dark-green fw-semibold bg-light-blue">
+                    <button type="submit" class="btn btn-md text-primary-color fw-semibold bg-secondary-light">
                         Enviar
                     </button>
                 </div>

@@ -1,16 +1,16 @@
 <div class="p-2 m-2 card">
     <div class="mb-2">
-        <h6 class="text-md text-dark-green">
+        <h6 class="text-md text-primary-color">
             Eliminación de la cuenta permanentemente.
         </h6>
     </div>
 
-    <div class="text-sm text-dark-green">
+    <div class="text-sm text-primary-color">
         Una vez que tu cuenta sea eliminada, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar tu cuenta, por favor descarga cualquier dato o información que desees conservar.
     </div>
 
     <div class="mt-5 text-center">
-        <button class="btn btn-sm fw-semibold text-dark-green bg-light-blue" wire:click="confirmUserDeletion" wire:loading.attr="disabled">
+        <button class="btn btn-sm fw-semibold text-primary-color bg-secondary-light" wire:click="confirmUserDeletion" wire:loading.attr="disabled">
             Eliiminar cuenta
         </button>
     </div>
@@ -24,7 +24,7 @@
                 </p>
 
                 <div class="mt-4">
-                    <label for="password" class="fw-semibold required text-dark-green">Contraseña</label>
+                    <label for="password" class="fw-semibold required text-primary-color">Contraseña</label>
                     <input type="password" class="form-control"
                            autocomplete="current-password"
                            placeholder="Contraseña"
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="mt-4 text-center">
-                    <button class="btn btn-md bg-light-gray fw-semibold text-dark-green" wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+                    <button class="btn btn-md bg-neutral-medium fw-semibold text-primary-color" wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
                         Cancelar
                     </button>
                     <button class="text-white btn btn-md bg-danger" wire:click="deleteUser" wire:loading.attr="disabled">

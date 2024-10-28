@@ -15,9 +15,7 @@
     @include('app.layouts.menu.components.plus', ['route' => route('roles.create')])
 @endsection
 
-<div class="m-2 card">
-    @livewire('role-livewire')
-</div>
+@livewire('role-livewire')
 
 @endsection
 

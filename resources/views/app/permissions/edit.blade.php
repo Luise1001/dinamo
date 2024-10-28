@@ -11,8 +11,8 @@
     EDITAR PERMISO
 @endsection
 
-<div class="p-3 m-2 card">
-    @if (isset($permission))
+@if (isset($permission))
+    <div class="p-3 m-2 card">
         <form action="{{ route('permissions.update') }}" method="post">
             @csrf
             @method('PUT')
@@ -23,7 +23,8 @@
             </div>
 
             <div class="mt-1">
-                <label for="display_name" class="text-primary-color fw-semibold fs-6 required">Nombre para mostrar</label>
+                <label for="display_name" class="text-primary-color fw-semibold fs-6 required">Nombre para
+                    mostrar</label>
                 <input type="text" class="form-control" name="display_name" value="{{ $permission->display_name }}">
             </div>
 
@@ -39,7 +40,7 @@
             </div>
 
             <div class="mt-1">
-                <input type="checkbox" name="hidden" {{ $permission->hidden == true ? 'checked' : '' }} value="1" >
+                <input type="checkbox" name="hidden" {{ $permission->hidden == true ? 'checked' : '' }} value="1">
                 <label for="active" class="text-neutral-medium">ocultar</label>
             </div>
 
@@ -48,8 +49,8 @@
                     class="btn btn-md bg-secondary-light text-primary-color fw-semibold fs-6">Guardar</button>
             </div>
         </form>
-    @endif
-</div>
+    </div>
+@endif
 
 @endsection
 

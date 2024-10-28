@@ -1,4 +1,6 @@
 const error = document.getElementById("error");
+let lat = document.getElementById("lat");
+let lng = document.getElementById("lng");
 let map;
 let marker;
 let autocomplete;
@@ -53,8 +55,8 @@ function placeMarker(location) {
         });
     }
     map.panTo(location);
-
-    console.log(location);
+    lat.value = location.lat();
+    lng.value = location.lng();
 }
 
 

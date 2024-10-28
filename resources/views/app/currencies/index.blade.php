@@ -15,9 +15,8 @@
     @include('app.layouts.menu.components.plus', ['route' => route('currencies.create')])
 @endsection
 
-<div class="m-2 card">
-    @livewire('currency-livewire')
-</div>
+@livewire('currency-livewire')
+
 
 @endsection
 

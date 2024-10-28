@@ -11,15 +11,16 @@
     EDITAR MONEDA
 @endsection
 
-<div class="p-3 m-2 card">
-    @if (isset($currency))
+@if (isset($currency))
+    <div class="p-3 m-2 card">
         <form action="{{ route('currencies.update') }}" method="post">
             @csrf
             @method('PUT')
             <div>
                 <input type="hidden" name="id" value="{{ $currency->id }}">
                 <label for="name" class="text-primary-color fw-semibold fs-6 required">Nombre</label>
-                <input type="text" class="form-control" name="name" value="{{ $currency->name }}" placeholder="Nombre">
+                <input type="text" class="form-control" name="name" value="{{ $currency->name }}"
+                    placeholder="Nombre">
             </div>
 
             <div class="mt-1">
@@ -38,13 +39,17 @@
             <div class="mt-1">
                 <label for="limit_user" class="text-primary-color fw-semibold fs-6 required">Limite por usuario</label>
                 <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control"
-                    id="limit_user" name="limit_user" value="{{ number_format($currency->limit_user, 2, ',', '.') }}" placeholder="Limite por usuario">
+                    id="limit_user" name="limit_user" value="{{ number_format($currency->limit_user, 2, ',', '.') }}"
+                    placeholder="Limite por usuario">
             </div>
 
             <div class="mt-1">
-                <label for="limit_driver" class="text-primary-color fw-semibold fs-6 required">Limite por conductor</label>
+                <label for="limit_driver" class="text-primary-color fw-semibold fs-6 required">Limite por
+                    conductor</label>
                 <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control"
-                    id="limit_driver" name="limit_driver" value="{{ number_format($currency->limit_driver, 2, ',', '.') }}" placeholder="Limite por conductor">
+                    id="limit_driver" name="limit_driver"
+                    value="{{ number_format($currency->limit_driver, 2, ',', '.') }}"
+                    placeholder="Limite por conductor">
             </div>
 
             <div class="mt-3 text-center">
@@ -52,8 +57,8 @@
                     class="btn btn-md bg-secondary-light text-primary-color fw-semibold fs-6">Guardar</button>
             </div>
         </form>
-    @endif
-</div>
+    </div>
+@endif
 
 @endsection
 

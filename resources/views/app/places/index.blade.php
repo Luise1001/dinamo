@@ -15,17 +15,9 @@
     @include('app.layouts.menu.components.plus', ['route' => route('places.create')])
 @endsection
 
-@if (isset($places) && $places->count() > 0)
-<div class="p-2 m-2 card">
-    
-</div>
-@endif
+@livewire('place-livewire')
 
 @endsection
 
 @section('scripts')
-<script>
-    const key = '{{ env('GOOGLE_MAPS_API_KEY') }}';
-</script>
-<script type="module" src="{{ asset('assets/js/app/utilities/maps.js') }}"></script>
 @endsection

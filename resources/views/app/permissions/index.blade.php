@@ -15,9 +15,7 @@
     @include('app.layouts.menu.components.plus', ['route' => route('permissions.create')])
 @endsection
 
-<div class="m-2 card">
-    @livewire('permission-livewire')
-</div>
+@livewire('permission-livewire')
 
 @endsection
 

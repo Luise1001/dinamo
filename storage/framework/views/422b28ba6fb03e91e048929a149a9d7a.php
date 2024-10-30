@@ -9,7 +9,7 @@
     CREAR PERMISO
 <?php $__env->stopSection(); ?>
 
-<div class="p-3">
+<div class="p-3 m-2 card">
         <form action="<?php echo e(route('permissions.store')); ?>" method="post">
             <?php echo csrf_field(); ?>
             <div>

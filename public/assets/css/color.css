@@ -1,84 +1,130 @@
 :root {
-    --dark-green: #002E28;
-    --medium-green: #1F613A;
-    --light-green: #319f43;
-    --dark-blue: #00072e;
-    --medium-blue: #125a94;
-    --light-blue: #00F6FF;
-    --dark-gray: #333333;
-    --medium-gray: #666666;
-    --light-gray: #DBDBDB;
-  }
+    /* Colores principales */
+    --primary-color: #002E28; /* Dark Green */
+    --primary-light: #319f43; /* Light Green */
+    --primary-dark: #1F613A; /* Medium Green */
 
-.bg-dark-green {
-    background-color: var(--dark-green) !important;
+    /* Colores secundarios */
+    --secondary-color: #00072e; /* Dark Blue */
+    --secondary-light: #00F6FF; /* Light Blue */
+    --secondary-dark: #125a94; /* Medium Blue */
+
+    /* Colores neutros */
+    --neutral-dark: #333333;
+    --neutral-medium: #666666;
+    --neutral-light: #DBDBDB;
+
+    /* Colores adicionales */
+    --accent-color: #FFD700; /* Amarillo, o cualquier otro color de acento */
+    --success-color: #28a745; /* Verde de éxito */
+    --warning-color: #ffc107; /* Amarillo de advertencia */
+    --danger-color: #dc3545; /* Rojo de error */
 }
 
-.bg-medium-green {
-    background-color: var(--medium-green) !important;
+/* Clases de fondo */
+.bg-primary-color {
+    background-color: var(--primary-color) !important;
 }
 
-.bg-light-green {
-    background-color: var(--light-green) !important;
+.bg-primary-light {
+    background-color: var(--primary-light) !important;
 }
 
-.bg-dark-gray {
-    background-color: var(--dark-gray) !important;
+.bg-primary-dark {
+    background-color: var(--primary-dark) !important;
 }
 
-.bg-medium-gray {
-    background-color: var(--medium-gray) !important;
+.bg-secondary-color {
+    background-color: var(--secondary-color) !important;
 }
 
-.bg-light-gray {
-    background-color: var(--light-gray) !important;
+.bg-secondary-light {
+    background-color: var(--secondary-light) !important;
 }
 
-.bg-dark-blue {
-    background-color: var(--dark-blue) !important;
+.bg-secondary-dark {
+    background-color: var(--secondary-dark) !important;
 }
 
-.bg-medium-blue {
-    background-color: var(--medium-blue) !important;
+.bg-neutral-dark {
+    background-color: var(--neutral-dark) !important;
 }
 
-.bg-light-blue {
-    background-color: var(--light-blue) !important;
+.bg-neutral-medium {
+    background-color: var(--neutral-medium) !important;
 }
 
-.text-dark-green {
-    color: var(--dark-green) !important;
+.bg-neutral-light {
+    background-color: var(--neutral-light) !important;
 }
 
-.text-medium-green {
-    color: var(--medium-green) !important;
+/* Clases de texto */
+.text-primary-color {
+    color: var(--primary-color) !important;
 }
 
-.text-light-green {
-    color: var(--light-green) !important;
+.text-primary-light {
+    color: var(--primary-light) !important;
 }
 
-.text-dark-gray {
-    color: var(--dark-gray) !important;
-} 
-
-.text-medium-gray {
-    color: var(--medium-gray) !important;
+.text-primary-dark {
+    color: var(--primary-dark) !important;
 }
 
-.text-light-gray {
-    color: var(--light-gray) !important;
+.text-secondary-color {
+    color: var(--secondary-color) !important;
 }
 
-.text-dark-blue {
-    color: var(--dark-blue) !important;
+.text-secondary-light {
+    color: var(--secondary-light) !important;
 }
 
-.text-medium-blue {
-    color: var(--medium-blue) !important;
+.text-secondary-dark {
+    color: var(--secondary-dark) !important;
 }
 
-.text-light-blue {
-    color: var(--light-blue) !important;
+.text-neutral-dark {
+    color: var(--neutral-dark) !important;
 }
 
+.text-neutral-medium {
+    color: var(--neutral-medium) !important;
+}
+
+.text-neutral-light {
+    color: var(--neutral-light) !important;
+}
+
+/* Clases de acento */
+.bg-accent-color {
+    background-color: var(--accent-color) !important;
+}
+
+.text-accent-color {
+    color: var(--accent-color) !important;
+}
+
+/* Colores de estado */
+.bg-success-color {
+    background-color: var(--success-color) !important;
+}
+
+.text-success-color {
+    color: var(--success-color) !important;
+}
+
+.bg-warning-color {
+    background-color: var(--warning-color) !important;
+}
+
+.text-warning-color {
+    color: var(--warning-color) !important;
+}
+
+.bg-danger-color {
+    background-color: var(--danger-color) !important;
+}
+
+.text-danger-color {
+    color: var(--danger-color) !important;
+}

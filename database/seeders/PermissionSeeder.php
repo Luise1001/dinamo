@@ -39,6 +39,71 @@ class PermissionSeeder extends Seeder
             'hidden' => true,
         ]);
 
+        Permission::create([
+            'name' => 'currencies.manage',
+            'display_name' => 'Monedas',
+            'description' => 'Gestión de monedas',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'destiny.manage',
+            'display_name' => 'Destinos',
+            'description' => 'Gestión de destinos',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'drivers.manage',
+            'display_name' => 'Conductores',
+            'description' => 'Gestión de conductores',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'users.manage',
+            'display_name' => 'Usuarios',
+            'description' => 'Gestión de usuarios',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'admin.manage',
+            'display_name' => 'Administradores',
+            'description' => 'Gestión de administradores',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'history.manage',
+            'display_name' => 'Historial',
+            'description' => 'Historial de transacciones',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'reports.manage',
+            'display_name' => 'Reportes',
+            'description' => 'Gestión de reportes',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+        Permission::create([
+            'name' => 'request.service',
+            'display_name' => 'Solicitar servicio',
+            'description' => '',
+            'route' => 'dashboard',
+            'hidden' => false,
+        ]);
+
+
         $permissions = Permission::all();
         $dev->permissions()->attach($permissions);
     }

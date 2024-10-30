@@ -56,7 +56,7 @@
   
   /* switch active */
   input:checked + .slider {
-    background-color: var(--light-blue);
+    background-color: var(--secondary-light);
   }
   
   input:checked + .slider:before {

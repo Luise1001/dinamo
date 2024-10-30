@@ -10,19 +10,19 @@
         <div class="p-3 mb-5 fixed-bottom">
             <div class="mt-5 text-center">
                 <img with="100px" height="100px" src="{{ asset('assets/media/icons/logo.svg') }}" alt="Logo">
-                <h1 class="text-dark-green fw-bold">DINAMO</h1>
+                <h1 class="text-primary-color fw-bold">DINAMO</h1>
             </div>
 
             <div class="flex-wrap mb-5 text-center d-flex">
-                <a href="{{ route('login') }} " class="mb-2 text-white btn btn-mid w-100 bg-dark-green">
+                <a href="{{ route('login') }} " class="mb-2 text-white btn btn-mid w-100 bg-primary-color">
                     Iniciar sesión
                 </a>
 
-                <a href="{{ route('register') }} " class="mb-2 text-white btn btn-mid w-100 bg-light-green">
+                <a href="{{ route('register') }} " class="mb-2 text-white btn btn-mid w-100 bg-primary-light">
                     Registrarse
                 </a>
 
-                <a class="bg-white border shadow-sm btn btn-md fs-6 w-100 text-dark-green"
+                <a class="bg-white border shadow-sm btn btn-md fs-6 w-100 text-primary-color"
                     href="{{ route('google.login') }}">
                     Continuar con
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" viewBox="0 0 512 168">
@@ -41,7 +41,7 @@
                 </a>
             </div>
 
-            <div class="footer">
+            <div class="footer d-none">
                 <div class="text-center">
                     <a class="nav-link" href="{{ route('password.request') }}">
                         ¿Olvidaste tu contraseña?

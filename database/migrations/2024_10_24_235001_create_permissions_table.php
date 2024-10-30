@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('route')->nullable();
             $table->boolean('active')->default(true);
             $table->boolean('hidden')->default(false);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

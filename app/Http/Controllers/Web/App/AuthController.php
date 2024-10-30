@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Str;
 
 class AuthController extends Controller
@@ -18,6 +19,7 @@ class AuthController extends Controller
 
     public function login()
     {
+        $role = Role::where('name', 'user')->first();
         $googleUser = Socialite::driver('google')->user();
 
         $user = User::firstOrCreate(
@@ -25,7 +27,7 @@ class AuthController extends Controller
             [
                 'name' => $googleUser->getName(),
                 'password' => bcrypt(Str::random(24)),
-                'role_id' => 2
+                'role_id' => $role->id
             ]
         );
 

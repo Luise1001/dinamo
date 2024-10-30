@@ -33,7 +33,7 @@
             </div>
             <span></span>
         </a>
-        
+
         <a class="text-center d-grid nav-link text-neutral-medium fs-075" href="<?php echo e(route('profile')); ?>">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 20 20">

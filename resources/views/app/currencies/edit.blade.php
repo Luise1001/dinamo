@@ -63,7 +63,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('assets/js/app/utilities/amount.js') }}"></script>
+<script src="{{ asset('assets/js/amount.js') }}"></script>
 <script>
     const rate = document.getElementById('rate');
     const limit_user = document.getElementById('limit_user');

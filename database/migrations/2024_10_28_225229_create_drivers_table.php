@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('last_name');
+            $table->string('document')->unique();
+            $table->string('phone')->unique();
+            $table->string('license_number')->unique();
+            $table->string('license_type');
+            $table->date('license_expiration');
+            $table->unsignedBigInteger('responsible_id');
+            $table->boolean('available')->default(true);
+            $table->boolean('active')->default(true);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

@@ -52,5 +52,5 @@
 <script>
     const key = '{{ env('GOOGLE_MAPS_API_KEY') }}';
 </script>
-<script type="module" src="{{ asset('assets/js/app/utilities/maps.js') }}"></script>
+<script type="module" src="{{ asset('assets/js/maps.js') }}"></script>
 @endsection

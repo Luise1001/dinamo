@@ -20,21 +20,21 @@ class RoleSeeder extends Seeder
         ]);
 
         Role::create([
-            'name' => 'user',
-            'display_name' => 'Usuario',
-            'description' => 'Usuario regular',
-        ]);
-
-        Role::create([
             'name' => 'admin',
             'display_name' => 'Administrador',
             'description' => 'Administrador de sistema',
         ]);
-        
+
         Role::create([
             'name' => 'driver',
             'display_name' => 'Conductor',
             'description' => 'Conductor de vehículo',
+        ]);
+
+        Role::create([
+            'name' => 'user',
+            'display_name' => 'Usuario',
+            'description' => 'Usuario regular',
         ]);
 
     }

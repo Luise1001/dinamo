@@ -5,6 +5,7 @@ namespace App\Http\Requests\Web\App;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use App\Models\Role;
 
 class PermissionRequest extends FormRequest
 {
@@ -13,7 +14,9 @@ class PermissionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if(Auth::user()->role_id == 1)
+        $role = Role::where('name', 'developer')->first();
+
+        if(Auth::user()->role_id == $role->id)
         {
             return true;
         }

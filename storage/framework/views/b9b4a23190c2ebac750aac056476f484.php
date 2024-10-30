@@ -9,8 +9,8 @@
     EDITAR ROL
 <?php $__env->stopSection(); ?>
 
-<div class="p-3 m-2 card">
-    <?php if(isset($role)): ?>
+<?php if(isset($role)): ?>
+    <div class="p-3 m-2 card">
         <form action="<?php echo e(route('roles.update')); ?>" method="post">
             <?php echo csrf_field(); ?>
             <?php echo method_field('PUT'); ?>
@@ -21,7 +21,8 @@
             </div>
 
             <div class="mt-1">
-                <label for="display_name" class="text-primary-color fw-semibold fs-6 required">Nombre para mostrar</label>
+                <label for="display_name" class="text-primary-color fw-semibold fs-6 required">Nombre para
+                    mostrar</label>
                 <input type="text" class="form-control" name="display_name" value="<?php echo e($role->display_name); ?>">
             </div>
 
@@ -39,7 +40,8 @@
 
 
                             <label class="container-switch">
-                                <input type="checkbox" class="toggle-switch" <?php echo e($role->permissions->contains($permission->id) ? 'checked' : ''); ?>>
+                                <input type="checkbox" class="toggle-switch"
+                                    <?php echo e($role->permissions->contains($permission->id) ? 'checked' : ''); ?>>
                                 <span class="slider"></span>
                             </label>
                         </span>
@@ -52,8 +54,8 @@
                 </button>
             </div>
         </form>
-    <?php endif; ?>
-</div>
+    </div>
+<?php endif; ?>
 
 <?php $__env->stopSection(); ?>
 

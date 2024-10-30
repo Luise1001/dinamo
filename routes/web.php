@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\App\RoleController;
 use App\Http\Controllers\Web\App\ProfileController;
 use App\Http\Controllers\Web\App\CurrencyController;
 use App\Http\Controllers\Web\App\PlacesController;
+use App\Http\Controllers\Web\App\DriverController;
 
 
 Route::get('/', function () {
@@ -76,6 +77,18 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         Route::put('/destinos', [PlacesController::class, 'update'])->name('places.update');
         Route::get('/destinos/crear', [PlacesController::class, 'create'])->name('places.create');
         Route::get('/destinos/editar={id}', [PlacesController::class, 'edit'])->name('places.edit');
+
+        /**
+         * Drivers
+         */
+        Route::get('/conductores', [DriverController::class, 'index'])->name('drivers');
+        Route::post('/conductores', [DriverController::class, 'store'])->name('drivers.store');
+        Route::put('/conductores', [DriverController::class, 'update'])->name('drivers.update');
+        Route::get('/conductores/crear', [DriverController::class, 'create'])->name('drivers.create');
+        Route::get('/conductores/editar={id}', [DriverController::class, 'edit'])->name('drivers.edit');
+
+
+
 
         /**
          * Dashboard

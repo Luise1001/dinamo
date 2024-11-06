@@ -20,8 +20,15 @@ class PlacesController extends Controller
         return view('app.places.create');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $this->validate($request, [
+            'id' => 'required|exists:places,id'
+        ],[
+            'id.required' => 'El id es requerido',
+            'id.exists' => 'El id no existe'
+        ]);
+
         $place = Place::find($id);
 
         return view('app.places.edit', [

@@ -30,8 +30,15 @@ class PermissionController extends Controller
         return redirect()->route('permissions')->withSuccess('Permiso creado correctamente');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $this->validate($request, [
+            'id' => 'required|exists:permissions,id'
+        ],[
+            'id.required' => 'El id es requerido',
+            'id.exists' => 'El id no existe'
+        ]);
+
         $permission = Permission::find($id);
 
         return view('app.permissions.edit', [

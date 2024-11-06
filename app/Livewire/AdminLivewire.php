@@ -6,24 +6,23 @@ use Livewire\Component;
 use App\Models\User;
 use App\Models\Role;
 
-
-class UserLivewire extends Component
+class AdminLivewire extends Component
 {
     public $user;
     protected $listeners = ['banned', 'verified', 'admin'];
 
     public function render()
     {
-        return view('livewire.user-livewire');
+        return view('livewire.admin-livewire');
     }
 
     public function admin($id)
     {
-        $admin = Role::where('name', 'admin')->first();
+        $role = Role::where('name', 'user')->first();
         $user = User::find($id);
-        $user->update(['role_id' => $admin->id]);
+        $user->update(['role_id' => $role->id]);
 
-        redirect()->route('admin');
+        redirect()->route('users');
     }
 
     public function banned($id)
@@ -39,4 +38,5 @@ class UserLivewire extends Component
         $user->update(['verified' => !$user->verified]);
         $this->user = $user;
     }
+    
 }

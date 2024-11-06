@@ -4,7 +4,7 @@
             <h6 class="text-primary-color">{{ $user->name }}</h6>
         </div>
         <div class="p-2 d-flex justify-content-between">
-            <span> Convertir en administrador </span>
+            <span> Administrador </span>
             <label class="container-switch">
                 <input wire:click="admin({{ $user->id }})" type="checkbox" class="toggle-switch"
                     {{ $user->role->name == 'admin' ? 'checked' : '' }} value="1">

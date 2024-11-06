@@ -27,8 +27,15 @@ class RoleController extends Controller
         return redirect()->route('roles')->withSuccess('Rol creado correctamente');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $this->validate($request, [
+            'id' => 'required|exists:roles,id'
+        ],[
+            'id.required' => 'El id es requerido',
+            'id.exists' => 'El id no existe'
+        ]);
+
         $role = Role::with('permissions')->where('id', $id)->first();
         $permissions = Permission::where('active', true)->get();
 

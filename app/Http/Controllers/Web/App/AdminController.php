@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Web\App;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
-        $role = Role::where('name', 'user')->first();
+        $role = Role::where('name', 'admin')->first();
         $users = User::where('role_id', $role->id)->get();
 
-        return view('app.users.index', [
+        return view('app.admin.index', [
             'users' => $users
         ]);
     }
@@ -27,10 +27,10 @@ class UserController extends Controller
             'id.required' => 'El id es requerido',
             'id.exists' => 'El id no existe'
         ]);
-        
+
         $user = User::find($id);
 
-        return view('app.users.edit', [
+        return view('app.admin.edit', [
             'user' => $user
         ]);
     }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Web\App\CurrencyController;
 use App\Http\Controllers\Web\App\PlacesController;
 use App\Http\Controllers\Web\App\DriverController;
 use App\Http\Controllers\Web\App\UserController;
+use App\Http\Controllers\Web\App\AdminController;
 
 
 Route::get('/', function () {
@@ -94,6 +95,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         Route::get('/usuarios', [UserController::class, 'index'])->name('users');
         Route::put('/usuarios', [UserController::class, 'update'])->name('users.update');
         Route::get('/usuarios/editar={id}', [UserController::class, 'edit'])->name('users.edit');
+
+        /**
+         * Admin
+         */
+        Route::get('admin', [AdminController::class, 'index'])->name('admin');
+        Route::put('admin', [AdminController::class, 'update'])->name('admin.update');
+        Route::get('admin/editar={id}', [AdminController::class, 'edit'])->name('admin.edit');
 
 
 

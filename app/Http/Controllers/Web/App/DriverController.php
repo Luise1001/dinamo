@@ -27,8 +27,15 @@ class DriverController extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $this->validate($request, [
+            'id' => 'required|exists:drivers,id'
+        ],[
+            'id.required' => 'El id es requerido',
+            'id.exists' => 'El id no existe'
+        ]);
+
         $role = Role::where('name', 'user')->first();
         $driver = Driver::with('responsible')->where('id', $id)->first();
         $users = User::where('role_id', $role->id)->select('id', 'email')->orderBy('id', 'desc')->get();

@@ -28,8 +28,19 @@ class CurrencyController extends Controller
         return view('app.currencies.create');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $this->validate(
+            $request,
+            [
+                'id' => 'required|exists:currencies,id'
+            ],
+            [
+                'id.required' => 'El id es requerido',
+                'id.exists' => 'El id no existe'
+            ]
+        );
+
         $currency = Currency::find($id);
 
         return view('app.currencies.edit', [

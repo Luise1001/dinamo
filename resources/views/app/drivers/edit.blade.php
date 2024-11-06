@@ -71,8 +71,8 @@
                     class="shadow-sm btn btn-md bg-secondary-light text-primary-color fw-semibold fs-6">Guardar</button>
             </div>
         </form>
+    </div>
 @endif
-</div>
 
 @endsection
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\App\ProfileController;
 use App\Http\Controllers\Web\App\CurrencyController;
 use App\Http\Controllers\Web\App\PlacesController;
 use App\Http\Controllers\Web\App\DriverController;
+use App\Http\Controllers\Web\App\UserController;
 
 
 Route::get('/', function () {
@@ -86,6 +87,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         Route::put('/conductores', [DriverController::class, 'update'])->name('drivers.update');
         Route::get('/conductores/crear', [DriverController::class, 'create'])->name('drivers.create');
         Route::get('/conductores/editar={id}', [DriverController::class, 'edit'])->name('drivers.edit');
+
+        /**
+         * Users
+         */
+        Route::get('/usuarios', [UserController::class, 'index'])->name('users');
+        Route::put('/usuarios', [UserController::class, 'update'])->name('users.update');
+        Route::get('/usuarios/editar={id}', [UserController::class, 'edit'])->name('users.edit');
 
 
 

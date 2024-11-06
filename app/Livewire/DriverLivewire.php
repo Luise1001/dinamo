@@ -12,7 +12,7 @@ class DriverLivewire extends Component
 
     public function render()
     {
-        $this->drivers = Driver::all();
+        $this->drivers = Driver::with('responsible')->get();
 
         return view('livewire.driver-livewire');
     }

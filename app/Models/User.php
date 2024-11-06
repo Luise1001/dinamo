@@ -30,6 +30,9 @@ class User extends Authenticatable
         'email',
         'password',
         'role_id',
+        'verified',
+        'banned',
+        'email_verified_at',
     ];
 
     /**
@@ -42,15 +45,6 @@ class User extends Authenticatable
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 
     /**

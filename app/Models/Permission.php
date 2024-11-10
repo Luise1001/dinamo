@@ -11,11 +11,19 @@ class Permission extends Model
     use HasFactory;
 
     protected $table = 'permissions';
-    protected $fillable = ['name', 'display_name', 'route', 'description', 'active', 'hidden'];
+    protected $fillable =
+    [
+        'name',
+        'display_name',
+        'route',
+        'description',
+        'active',
+        'hidden',
+        'user_id'
+    ];
 
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'role_permissions');
     }
-
 }

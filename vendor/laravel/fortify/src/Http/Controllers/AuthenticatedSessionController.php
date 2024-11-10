@@ -17,6 +17,7 @@ use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Http\Requests\LoginRequest;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -57,7 +58,14 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        $user = User::where('email', $request->email)->first();
+
+        if($user->banned) {
+            return back()->withErrors(['email' => 'Su cuenta ha sido suspendida.']);
+        }
+
         return $this->loginPipeline($request)->then(function ($request) {
+
             return app(LoginResponse::class);
         });
     }

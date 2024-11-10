@@ -33,6 +33,10 @@ class AuthController extends Controller
             ]
         );
 
+        if($user->banned) {
+            return back()->withErrors(['email' => 'Su cuenta ha sido suspendida.']);
+        }
+
         Auth::login($user);
 
         return redirect()->route('dashboard');

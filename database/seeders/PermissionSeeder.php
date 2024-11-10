@@ -106,10 +106,10 @@ class PermissionSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name' => 'request.service',
-            'display_name' => 'Solicitar servicio',
+            'name' => 'request.delivery',
+            'display_name' => 'Entregas',
             'description' => '',
-            'route' => 'dashboard',
+            'route' => 'delivery',
             'hidden' => false,
             'user_id' => 1
         ]);

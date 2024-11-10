@@ -30,6 +30,8 @@ class CurrencyController extends Controller
 
     public function edit(Request $request, $id)
     {
+        $request->merge(['id' => $id]);
+        
         $this->validate(
             $request,
             [

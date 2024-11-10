@@ -21,6 +21,8 @@ class UserController extends Controller
 
     public function edit(Request $request, $id)
     {
+        $request->merge(['id' => $id]);
+        
         $this->validate($request, [
             'id' => 'required|exists:users,id'
         ],[

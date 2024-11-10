@@ -22,6 +22,9 @@ class PermissionController extends Controller
 
     public function store(PermissionRequest $request)
     {
+        $user_id = auth()->user()->id;
+        $request->merge(['user_id' => $user_id]);
+
         $dev = Role::where('name', 'developer')->first();
         $permission = Permission::create($request->all());
 
@@ -32,6 +35,9 @@ class PermissionController extends Controller
 
     public function edit(Request $request, $id)
     {
+        $user_id = auth()->user()->id;
+        $request->merge(['id' => $id, 'user_id' => $user_id]);
+        
         $this->validate($request, [
             'id' => 'required|exists:permissions,id'
         ],[

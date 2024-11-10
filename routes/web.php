@@ -10,6 +10,8 @@ use App\Http\Controllers\Web\App\PlacesController;
 use App\Http\Controllers\Web\App\DriverController;
 use App\Http\Controllers\Web\App\UserController;
 use App\Http\Controllers\Web\App\AdminController;
+use App\Http\Controllers\Web\App\AddressController;
+use App\Http\Controllers\Web\App\DeliveryController;
 
 
 Route::get('/', function () {
@@ -103,6 +105,19 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         Route::put('admin', [AdminController::class, 'update'])->name('admin.update');
         Route::get('admin/editar={id}', [AdminController::class, 'edit'])->name('admin.edit');
 
+        /**
+         * address
+         */
+        Route::get('mis-direcciones', [AddressController::class, 'index'])->name('address');
+        Route::post('mis-direcciones', [AddressController::class, 'store'])->name('address.store');
+        Route::put('mis-direcciones', [AddressController::class, 'update'])->name('address.update');
+        Route::get('mis-direcciones/crear', [AddressController::class, 'create'])->name('address.create');
+        Route::get('mis-direcciones/editar={id}', [AddressController::class, 'edit'])->name('address.edit');
+
+        /**
+         * delivery
+         */
+        Route::get('entregas', [DeliveryController::class, 'index'])->name('delivery');
 
 
 

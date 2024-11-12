@@ -30,15 +30,21 @@
         </div>
 
         <div class="mt-1">
-            <label for="limit_user" class="text-primary-color fw-semibold fs-6 required">Limite por usuario</label>
-            <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control" id="limit_user"
-                name="limit_user" value="0,00" placeholder="Limite por usuario">
+            <label for="min_user" class="text-primary-color fw-semibold fs-6 required">Minimo por usuario</label>
+            <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control" id="min_user"
+                name="min_user" value="0,00" placeholder="Limite por usuario">
         </div>
 
         <div class="mt-1">
-            <label for="limit_driver" class="text-primary-color fw-semibold fs-6 required">Limite por conductor</label>
-            <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control" id="limit_driver" name="limit_driver" value="0,00"
-                placeholder="Limite por conductor">
+            <label for="max_user" class="text-primary-color fw-semibold fs-6 required">Máximo por usuario</label>
+            <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control" id="max_user"
+                name="max_user" value="0,00" placeholder="Limite por usuario">
+        </div>
+
+        <div class="mt-1">
+            <label for="max_driver" class="text-primary-color fw-semibold fs-6 required">Máximo por conductor</label>
+            <input onkeypress="return isNumber(event, this, true)" type="text" class="form-control" id="max_driver" name="max_driver" value="0,00"
+                placeholder="Máximo por conductor">
         </div>
 
         <div class="mt-3 text-center">
@@ -53,11 +59,13 @@
 <script src="{{ asset('assets/js/amount.js') }}"></script>
 <script>
     const rate = document.getElementById('rate');
-    const limit_user = document.getElementById('limit_user');
-    const limit_driver = document.getElementById('limit_driver');
+    const min_user = document.getElementById('min_user');
+    const max_user = document.getElementById('max_user');
+    const max_driver = document.getElementById('max_driver');
 
     AmountKeyUp(rate);
-    AmountKeyUp(limit_user);
-    AmountKeyUp(limit_driver);
+    AmountKeyUp(min_user);
+    AmountKeyUp(max_user);
+    AmountKeyUp(max_driver);
 </script>
 @endsection

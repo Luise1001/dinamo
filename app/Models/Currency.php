@@ -16,8 +16,9 @@ class Currency extends Model
         'code',
         'rate',
         'active',
-        'limit_user',
-        'limit_driver',
+        'min_user',
+        'max_user',
+        'max_driver',
         'user_id',
     ];
 

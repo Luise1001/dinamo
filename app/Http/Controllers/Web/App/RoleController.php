@@ -7,6 +7,7 @@ use App\Http\Requests\Web\App\RoleRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\Permission;
+use Illuminate\Database\Eloquent\Casts\Json;
 
 class RoleController extends Controller
 {
@@ -30,10 +31,10 @@ class RoleController extends Controller
     public function edit(Request $request, $id)
     {
         $request->merge(['id' => $id]);
-        
+
         $this->validate($request, [
             'id' => 'required|exists:roles,id'
-        ],[
+        ], [
             'id.required' => 'El id es requerido',
             'id.exists' => 'El id no existe'
         ]);
@@ -55,9 +56,18 @@ class RoleController extends Controller
             'id.required' => 'El id es requerido',
             'id.exists' => 'El id no existe',
         ]);
-        
+
         $role = Role::find($request->id);
         $role->update($request->all());
+
+        if ($request->permissions) {
+            $permissions = json_decode($request->permissions);
+            $role->permissions()->detach();
+            
+            foreach ($permissions as $permission) {
+                $role->permissions()->attach($permission);
+            }
+        }
 
         return redirect()->route('roles')->withSuccess('Rol actualizado correctamente');
     }

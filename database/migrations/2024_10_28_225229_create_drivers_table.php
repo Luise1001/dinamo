@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->decimal('balance', 17, 2)->default(0);
             $table->string('document')->unique();
             $table->string('phone')->unique();
             $table->string('license_number')->unique();

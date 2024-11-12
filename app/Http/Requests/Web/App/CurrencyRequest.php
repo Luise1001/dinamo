@@ -26,8 +26,9 @@ class CurrencyRequest extends FormRequest
             'name' => ['required', 'string', 'max:255', Rule::unique('currencies')->ignore($this->id)],
             'code' => ['required', 'string', 'max:5', Rule::unique('currencies')->ignore($this->id)],
             'rate' => 'required',
-            'limit_user' => 'required',
-            'limit_driver' => 'required',
+            'min_user' => 'required',
+            'max_user' => 'required',
+            'max_driver' => 'required',
         ];
     }
 
@@ -43,8 +44,9 @@ class CurrencyRequest extends FormRequest
             'code.max' => 'El código no debe exceder los 5 caracteres',
             'code.unique' => 'El código ya se encuentra registrado',
             'rate.required' => 'La tasa es requerida',
-            'limit_user.required' => 'El límite de usuario es requerido',
-            'limit_driver.required' => 'El límite de conductor es requerido',
+            'min_user.required' => 'El mínimo de usuario es requerido',
+            'max_user.required' => 'El máximo de usuario es requerido',
+            'max_driver.required' => 'El máximo de conductor es requerido',
         ];
     }
 }

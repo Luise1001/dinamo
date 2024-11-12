@@ -14,6 +14,7 @@ class Driver extends Model
     protected $fillable = [
         'name',
         'last_name',
+        'balance',
         'document',
         'phone',
         'license_number',

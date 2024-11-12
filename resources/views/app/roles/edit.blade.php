@@ -13,7 +13,7 @@
 
 @if (isset($role))
     <div class="p-3 m-2 card">
-        <form action="{{ route('roles.update') }}" method="post">
+        <form id="edit_role" action="{{ route('roles.update') }}" method="post">
             @csrf
             @method('PUT')
             <div>
@@ -41,7 +41,8 @@
                             {{ $permission->display_name }}
 
                             <label class="container-switch">
-                                <input type="checkbox" class="toggle-switch"
+                                <input onClick="permission(this, {{ $permission->id }})" type="checkbox"
+                                    class="toggle-switch"
                                     {{ $role->permissions->contains($permission->id) ? 'checked' : '' }}>
                                 <span class="slider"></span>
                             </label>
@@ -61,4 +62,9 @@
 @endsection
 
 @section('scripts')
+<script>
+    let list_permissions = @json($role->permissions->pluck('id')); 
+</script>
+<script src="{{ asset('assets/js/app/roles/edit.js') }}"></script>
+
 @endsection

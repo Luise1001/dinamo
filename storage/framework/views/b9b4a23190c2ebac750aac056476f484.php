@@ -11,7 +11,7 @@
 
 <?php if(isset($role)): ?>
     <div class="p-3 m-2 card">
-        <form action="<?php echo e(route('roles.update')); ?>" method="post">
+        <form id="edit_role" action="<?php echo e(route('roles.update')); ?>" method="post">
             <?php echo csrf_field(); ?>
             <?php echo method_field('PUT'); ?>
             <div>
@@ -40,7 +40,8 @@
 
 
                             <label class="container-switch">
-                                <input type="checkbox" class="toggle-switch"
+                                <input onClick="permission(this, <?php echo e($permission->id); ?>)" type="checkbox"
+                                    class="toggle-switch"
                                     <?php echo e($role->permissions->contains($permission->id) ? 'checked' : ''); ?>>
                                 <span class="slider"></span>
                             </label>
@@ -60,6 +61,11 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('scripts'); ?>
+<script>
+    let list_permissions = <?php echo json_encode($role->permissions->pluck('id'), 15, 512) ?>; 
+</script>
+<script src="<?php echo e(asset('assets/js/app/roles/edit.js')); ?>"></script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('app.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/resources/views/app/roles/edit.blade.php ENDPATH**/ ?>

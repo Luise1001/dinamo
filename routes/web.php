@@ -118,6 +118,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
          * delivery
          */
         Route::get('entregas', [DeliveryController::class, 'index'])->name('delivery');
+        Route::post('entregas', [DeliveryController::class, 'store'])->name('delivery.store');
+        Route::get('entregas/crear', [DeliveryController::class, 'create'])->name('delivery.create');
+        Route::get('entregas/detalle/orden={id}', [DeliveryController::class, 'detail'])->name('delivery.detail');
+        
 
 
 

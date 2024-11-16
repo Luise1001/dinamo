@@ -47,6 +47,7 @@
 
     @include('app.layouts.menu.footer.footer-menu')
 
+    @livewire('fcm-token')
 
     @stack('modals')
 
@@ -62,6 +63,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
+
+    <script type="module" src="{{ asset('assets/js/firebase.js') }}"></script>
     @yield('scripts')
 
 

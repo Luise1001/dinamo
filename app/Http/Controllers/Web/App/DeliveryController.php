@@ -36,9 +36,10 @@ class DeliveryController extends Controller
 
     public function create()
     {
+        $user_id = Auth::user()->id;
         $currencies = Currency::where('active', 1)->get();
         $places = Place::where('active', 1)->get();
-        $addresses = Address::where('active', 1)->get();
+        $addresses = Address::where(['user_id' => $user_id, 'active' => 1])->get();
 
         return view('app.delivery.create', [
             'currencies' => $currencies,

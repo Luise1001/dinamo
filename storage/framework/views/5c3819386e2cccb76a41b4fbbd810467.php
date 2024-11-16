@@ -49,6 +49,22 @@
 
     <?php echo $__env->make('app.layouts.menu.footer.footer-menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('fcm-token');
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-3016633710-0', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
 
     <?php echo $__env->yieldPushContent('modals'); ?>
 
@@ -65,6 +81,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
+
+    <script type="module" src="<?php echo e(asset('assets/js/firebase.js')); ?>"></script>
     <?php echo $__env->yieldContent('scripts'); ?>
 
 

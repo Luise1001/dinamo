@@ -34,9 +34,9 @@
                             Iniciar sesión
                         </button>
 
-                        <button onclick="window.history.back()" class="mt-3 text-white shadow-sm btn btn-md bg-neutral-medium">
+                        <a href="/" class="mt-3 text-white shadow-sm btn btn-md bg-neutral-medium">
                             Volver
-                        </button>
+                        </a>
                     </div>
 
                 </form>

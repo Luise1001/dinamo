@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('fcm_token')->nullable();
+            $table->boolean('verified')->default(false);
+            $table->boolean('banned')->default(false);
             $table->rememberToken();
             $table->unsignedBigInteger('role_id');
             $table->string('profile_photo_path', 2048)->nullable();

@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Role;
+use App\Models\Driver;
 
 class User extends Authenticatable
 {
@@ -29,6 +30,10 @@ class User extends Authenticatable
         'email',
         'password',
         'role_id',
+        'fcm_token',
+        'verified',
+        'banned',
+        'email_verified_at',
     ];
 
     /**
@@ -44,15 +49,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
-    /**
      * The accessors to append to the model's array form.
      *
      * @var array<int, string>
@@ -64,5 +60,10 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function driver()
+    {
+        return $this->hasOne(Driver::class, 'responsible_id');
     }
 }

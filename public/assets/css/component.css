@@ -63,3 +63,7 @@
     transform: translateX(13px);
   }
   
+/*fonts*/
+  .fs-075 {
+    font-size: 0.75rem !important;
+}

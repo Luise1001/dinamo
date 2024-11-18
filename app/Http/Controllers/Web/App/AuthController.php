@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -18,6 +20,7 @@ class AuthController extends Controller
 
     public function login()
     {
+        $role = Role::where('name', 'user')->first();
         $googleUser = Socialite::driver('google')->user();
 
         $user = User::firstOrCreate(
@@ -25,9 +28,14 @@ class AuthController extends Controller
             [
                 'name' => $googleUser->getName(),
                 'password' => bcrypt(Str::random(24)),
-                'role_id' => 2
+                'email_verified_at' => Carbon::now(),
+                'role_id' => $role->id
             ]
         );
+
+        if($user->banned) {
+            return back()->withErrors(['email' => 'Su cuenta ha sido suspendida.']);
+        }
 
         Auth::login($user);
 

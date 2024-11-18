@@ -22,6 +22,7 @@ class PermissionSeeder extends Seeder
             'display_name' => 'Permisos',
             'description' => 'Gestión de permisos',
             'route' => 'permissions',
+            'user_id' => 1
         ]);
 
         Permission::create([
@@ -29,6 +30,7 @@ class PermissionSeeder extends Seeder
             'display_name' => 'Roles',
             'description' => 'Gestión de roles',
             'route' => 'roles',
+            'user_id' => 1
         ]);
 
         Permission::create([
@@ -37,38 +39,43 @@ class PermissionSeeder extends Seeder
             'description' => 'Gestión de configuraciones',
             'route' => 'settings',
             'hidden' => true,
+            'user_id' => 1
         ]);
 
         Permission::create([
             'name' => 'currencies.manage',
             'display_name' => 'Monedas',
             'description' => 'Gestión de monedas',
-            'route' => 'dashboard',
+            'route' => 'currencies',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
             'name' => 'destiny.manage',
             'display_name' => 'Destinos',
             'description' => 'Gestión de destinos',
-            'route' => 'dashboard',
+            'route' => 'places',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
             'name' => 'drivers.manage',
             'display_name' => 'Conductores',
             'description' => 'Gestión de conductores',
-            'route' => 'dashboard',
+            'route' => 'drivers',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
             'name' => 'users.manage',
             'display_name' => 'Usuarios',
             'description' => 'Gestión de usuarios',
-            'route' => 'dashboard',
+            'route' => 'users',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
@@ -77,6 +84,7 @@ class PermissionSeeder extends Seeder
             'description' => 'Gestión de administradores',
             'route' => 'dashboard',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
@@ -85,6 +93,7 @@ class PermissionSeeder extends Seeder
             'description' => 'Historial de transacciones',
             'route' => 'dashboard',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
@@ -93,14 +102,16 @@ class PermissionSeeder extends Seeder
             'description' => 'Gestión de reportes',
             'route' => 'dashboard',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
         Permission::create([
-            'name' => 'request.service',
-            'display_name' => 'Solicitar servicio',
+            'name' => 'request.delivery',
+            'display_name' => 'Entregas',
             'description' => '',
-            'route' => 'dashboard',
+            'route' => 'delivery',
             'hidden' => false,
+            'user_id' => 1
         ]);
 
 

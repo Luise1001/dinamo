@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('code', 5)->unique();
             $table->decimal('rate', 17, 2);
             $table->boolean('active')->default(true);
-            $table->decimal('limit_user', 17, 2);
-            $table->decimal('limit_driver', 17, 2);
+            $table->decimal('min_user', 17, 2);
+            $table->decimal('max_user', 17, 2);
+            $table->decimal('max_driver', 17, 2);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });

@@ -1,4 +1,22 @@
 <?php return array (
+  'kreait/laravel-firebase' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Kreait\\Laravel\\Firebase\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Firebase' => 'Kreait\\Laravel\\Firebase\\Facades\\Firebase',
+    ),
+  ),
+  'laravel-notification-channels/fcm' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'NotificationChannels\\Fcm\\FcmServiceProvider',
+    ),
+  ),
   'laravel/fortify' => 
   array (
     'providers' => 

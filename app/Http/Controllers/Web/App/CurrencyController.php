@@ -28,8 +28,21 @@ class CurrencyController extends Controller
         return view('app.currencies.create');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
+        $request->merge(['id' => $id]);
+        
+        $this->validate(
+            $request,
+            [
+                'id' => 'required|exists:currencies,id'
+            ],
+            [
+                'id.required' => 'El id es requerido',
+                'id.exists' => 'El id no existe'
+            ]
+        );
+
         $currency = Currency::find($id);
 
         return view('app.currencies.edit', [
@@ -44,16 +57,18 @@ class CurrencyController extends Controller
         $name = ucfirst($request->name);
         $code = strtoupper($request->code);
         $rate = $this->amountService->format($request->rate);
-        $limit_user = $this->amountService->format($request->limit_user);
-        $limit_driver = $this->amountService->format($request->limit_driver);
+        $min_user = $this->amountService->format($request->min_user);
+        $max_user = $this->amountService->format($request->max_user);
+        $max_driver = $this->amountService->format($request->max_driver);
 
         $request->merge([
             'user_id' => $user_id,
             'name' => $name,
             'code' => $code,
             'rate' => $rate,
-            'limit_user' => $limit_user,
-            'limit_driver' => $limit_driver,
+            'min_user' => $min_user,
+            'max_user' => $max_user,
+            'max_driver' => $max_driver,
         ]);
 
         Currency::create($request->all());
@@ -75,16 +90,18 @@ class CurrencyController extends Controller
         $name = ucfirst($request->name);
         $code = strtoupper($request->code);
         $rate = $this->amountService->format($request->rate);
-        $limit_user = $this->amountService->format($request->limit_user);
-        $limit_driver = $this->amountService->format($request->limit_driver);
+        $min_user = $this->amountService->format($request->min_user);
+        $max_user = $this->amountService->format($request->max_user);
+        $max_driver = $this->amountService->format($request->max_driver);
 
         $request->merge([
             'user_id' => $user_id,
             'name' => $name,
             'code' => $code,
             'rate' => $rate,
-            'limit_user' => $limit_user,
-            'limit_driver' => $limit_driver,
+            'min_user' => $min_user,
+            'max_user' => $max_user,
+            'max_driver' => $max_driver,
         ]);
 
         $currency = Currency::find($request->id);

@@ -10,6 +10,13 @@
       'Firebase' => 'Kreait\\Laravel\\Firebase\\Facades\\Firebase',
     ),
   ),
+  'laravel-notification-channels/fcm' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'NotificationChannels\\Fcm\\FcmServiceProvider',
+    ),
+  ),
   'laravel/fortify' => 
   array (
     'providers' => 

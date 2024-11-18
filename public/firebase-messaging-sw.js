@@ -15,8 +15,15 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(function(payload) {
-  console.log('[firebase-messaging-sw.js] Mensaje recibido en segundo plano:', payload);
+  const notificationTitle = payload.notification.title || 'Título predeterminado';
+  const notificationOptions = {
+    body: payload.notification.body || 'Cuerpo de la notificación.',
+  };
 
+  self.registration.showNotification(notificationTitle, notificationOptions);
+});
+
+messaging.onMessage(function(payload) {
   const notificationTitle = payload.notification.title || 'Título predeterminado';
   const notificationOptions = {
     body: payload.notification.body || 'Cuerpo de la notificación.',
@@ -29,7 +36,6 @@ messaging.onBackgroundMessage(function(payload) {
 self.addEventListener('install', (event) => {
   self.skipWaiting(); 
 });
-
 
 self.addEventListener('activate', (event) => {
   return self.clients.claim();

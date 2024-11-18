@@ -24,8 +24,7 @@ async function requestPermission() {
         vapidKey: "BNx8lO9CMusOVO7Pdgg4niupPXr60U3PCHasLudc-_4xus7sgE3lqnsM9Hb75mud5SfWUBhCoOXDHZ3lQfKJZmo"
       });
 
-      Livewire.dispatch('save', [token]);
-      console.log('FCM Token:', token);
+      Livewire.dispatch('saveToken', [token]);
     }
 
   } catch (error) {
@@ -34,7 +33,16 @@ async function requestPermission() {
 };
 
 onMessage(messaging, (payload) => {
-  console.log('Message received. ', payload);
+  const notificationTitle = payload.notification?.title || 'Default title';
+  const notificationOptions = {
+      body: payload.notification?.body || 'Default body.',
+  };
+
+  if (Notification.permission === 'granted') {
+      new Notification(notificationTitle, notificationOptions);
+  } else {
+      console.warn('No se puede mostrar la notificación porque no se han concedido permisos.');
+  }
 });
 
 

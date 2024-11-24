@@ -41,7 +41,7 @@ onMessage(messaging, (payload) => {
   if (Notification.permission === 'granted') {
       new Notification(notificationTitle, notificationOptions);
   } else {
-      console.warn('No se puede mostrar la notificación porque no se han concedido permisos.');
+      console.warn('permission denied.');
   }
 });
 
@@ -55,8 +55,8 @@ if ('serviceWorker' in navigator) {
       requestPermission();
     })
     .catch((error) => {
-      console.error('Error al registrar el Service Worker:', error);
+      console.error('failed service worker registration', error);
     });
 } else {
-  console.warn('Service Workers no están soportados en este navegador.');
+  console.warn('service workers are not supported.');
 }

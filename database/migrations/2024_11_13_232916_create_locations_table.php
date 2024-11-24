@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
             $table->string('lat');
             $table->string('lng');
             $table->unsignedBigInteger('user_id');

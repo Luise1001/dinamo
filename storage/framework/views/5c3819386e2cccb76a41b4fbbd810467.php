@@ -65,6 +65,22 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
+    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('location-livewire');
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-3016633710-1', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
 
     <?php echo $__env->yieldPushContent('modals'); ?>
 
@@ -86,6 +102,7 @@ if (isset($__slots)) unset($__slots);
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
 
     <script type="module" src="<?php echo e(asset('assets/js/firebase.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/location.js')); ?>"></script>
     <?php echo $__env->yieldContent('scripts'); ?>
 
 

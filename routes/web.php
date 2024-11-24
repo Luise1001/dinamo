@@ -14,9 +14,6 @@ use App\Http\Controllers\Web\App\AddressController;
 use App\Http\Controllers\Web\App\DeliveryController;
 use App\Http\Controllers\FirebaseTestController;
 
-Route::get('/firebase/access-token', [FirebaseTestController::class, 'getAccessToken']);
-Route::get('/firebase/send-notification', [FirebaseTestController::class, 'sendNotification']);
-
 
 Route::get('/', function () {
 

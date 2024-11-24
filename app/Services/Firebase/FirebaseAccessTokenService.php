@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Cache;
 class FirebaseAccessTokenService
 {
     /**
-     * Generar el Access Token usando la cuenta de servicio.
      *
      * @return string
      */

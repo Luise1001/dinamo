@@ -48,6 +48,7 @@
     @include('app.layouts.menu.footer.footer-menu')
 
     @livewire('fcm-token')
+    @livewire('location-livewire')
 
     @stack('modals')
 
@@ -68,6 +69,7 @@
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
 
     <script type="module" src="{{ asset('assets/js/firebase.js') }}"></script>
+    <script src="{{ asset('assets/js/location.js') }}"></script>
     @yield('scripts')
 
 

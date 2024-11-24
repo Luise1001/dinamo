@@ -15,18 +15,18 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(function(payload) {
-  const notificationTitle = payload.notification.title || 'Título predeterminado';
+  const notificationTitle = payload.notification.title || 'default title';
   const notificationOptions = {
-    body: payload.notification.body || 'Cuerpo de la notificación.',
+    body: payload.notification.body || 'default body.',
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
 messaging.onMessage(function(payload) {
-  const notificationTitle = payload.notification.title || 'Título predeterminado';
+  const notificationTitle = payload.notification.title || 'default title';
   const notificationOptions = {
-    body: payload.notification.body || 'Cuerpo de la notificación.',
+    body: payload.notification.body || 'default body.',
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
